@@ -11,7 +11,9 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('soldier') soldier!: ElementRef;
 
   ngAfterViewInit(): void {
-    setTimeout(() => {}, 8000);
+    setTimeout(() => {
+      this.splashscreen = false;
+    }, 8000);
     anime
       .timeline()
       .add({
