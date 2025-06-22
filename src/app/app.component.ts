@@ -29,7 +29,7 @@ export class AppComponent implements AfterViewInit {
         duration: 2000,
         begin: () => {
           this.soldier.nativeElement.style.backgroundImage =
-            'url(../assets/soldier-sit.png)';
+            'url(./../assets/soldier-sit.png)';
           anime({
             targets: ['.title'],
             delay: 400,
