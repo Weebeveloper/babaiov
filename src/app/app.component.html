@@ -4,7 +4,9 @@
 
 <ng-template #splashscreenTemplate>
   <div class="splashscreen__container">
-    <div class="person" #soldier></div>
+    <div
+      class="soldier" [ngClass]="{ 'soldier__sitting': soldierSitting }"
+    ></div>
 
     <div class="title">תורנויות</div>
   </div>

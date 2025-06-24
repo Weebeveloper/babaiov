@@ -17,10 +17,9 @@
 }
 
 .splashscreen__container {
-  .person {
+  .soldier {
     width: 400px;
     height: 800px;
-    background-color: red;
     background: url("../assets/soldier-walk.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -28,6 +27,12 @@
     right: -500px;
     top: 30%;
     z-index: 2;
+
+    &__sitting {
+      background: url("../assets/soldier-sit.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
   }
 
   .title {

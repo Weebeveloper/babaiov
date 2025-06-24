@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import anime from 'animejs/lib/anime.es.js';
 
 @Component({
@@ -8,7 +8,7 @@ import anime from 'animejs/lib/anime.es.js';
 })
 export class AppComponent implements AfterViewInit {
   splashscreen = true;
-  @ViewChild('soldier') soldier!: ElementRef;
+  soldierSitting: boolean = false;
 
   ngAfterViewInit(): void {
     setTimeout(() => {
@@ -17,19 +17,18 @@ export class AppComponent implements AfterViewInit {
     anime
       .timeline()
       .add({
-        targets: ['.person'],
+        targets: ['.soldier'],
         translateX: `-50vw`,
         duration: 4000,
         easing: 'easeOutSine',
       })
       .add({
-        targets: ['.person'],
+        targets: ['.soldier'],
         scaleY: `0.8`,
         scaleX: '0.8',
         duration: 2000,
         begin: () => {
-          this.soldier.nativeElement.style.backgroundImage =
-            'url(./../assets/soldier-sit.png)';
+          this.soldierSitting = true;
           anime({
             targets: ['.title'],
             delay: 400,
